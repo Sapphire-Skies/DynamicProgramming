@@ -12,5 +12,5 @@ int knapsack(int wt[], int val[], int W, int n) {
   if(wt[n-1] > W)
     return table[n][W] = knapsack(wt, val, W, n-1);
   else
-    return table[n][W] = max(table[n-1][W], table[n-1][W-wt[n-1]]);
+    return table[n][W] = max(table[n-1][W], val[n-1] + table[n-1][W-wt[n-1]]);
 }
